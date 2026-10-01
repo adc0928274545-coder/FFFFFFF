@@ -1,0 +1,378 @@
+/* ===========================
+   Future Path v2
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
+}
+
+body{
+    background:#000;
+    color:#fff;
+    overflow:hidden;
+}
+
+.screen{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:30px;
+    transition:.6s;
+}
+
+.hidden{
+    display:none;
+}
+
+/* Splash */
+
+.intro{
+    text-align:center;
+}
+
+.logo{
+    width:140px;
+    height:140px;
+    object-fit:contain;
+    margin-bottom:20px;
+
+    opacity:0;
+    transform:translateY(30px) scale(.8);
+
+    animation:
+        logoAppear 1.2s ease forwards,
+        float 3s ease-in-out 1.2s infinite,
+        glow 2s ease-in-out infinite;
+}
+
+h1{
+    font-size:52px;
+    margin-bottom:15px;
+}
+
+#typing{
+    color:#d5d5d5;
+    font-size:20px;
+    min-height:60px;
+    margin-bottom:35px;
+}
+
+#startBtn{
+    opacity:0;
+    pointer-events:none;
+}
+
+/* Card */
+
+.card{
+
+    width:400px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    padding:30px;
+
+    text-align:center;
+
+}
+
+.card h2{
+
+    margin-bottom:25px;
+
+}
+
+/* Input */
+
+input{
+
+    width:100%;
+
+    padding:18px;
+
+    margin-top:18px;
+
+    background:#171717;
+
+    color:white;
+
+    border:none;
+
+    border-radius:15px;
+
+    font-size:17px;
+
+    outline:none;
+
+}
+
+/* Button */
+
+button{
+
+    width:100%;
+
+    margin-top:22px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:linear-gradient(135deg,#ff3045,#9c0016);
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 0 25px rgba(255,0,40,.35);
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 35px rgba(255,0,40,.45);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+/* Loading */
+
+.loader{
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    border:8px solid #222;
+
+    border-top:8px solid #ff3045;
+
+    animation:spin 1s linear infinite;
+
+}
+
+#loading h2{
+
+    margin-top:30px;
+
+}
+
+#loadingText{
+
+    color:#aaa;
+
+    margin-top:10px;
+
+}
+
+.progress{
+
+    width:320px;
+
+    height:12px;
+
+    margin-top:30px;
+
+    background:#222;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+}
+
+#progressBar{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(90deg,#ff3045,#ff6a6a);
+
+}
+
+#percent{
+
+    margin-top:20px;
+
+}
+
+/* Result */
+
+.path-card{
+
+    width:420px;
+
+    background:#161616;
+
+    border-radius:22px;
+
+    padding:25px;
+
+    margin:15px 0;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.path-card h2{
+
+    margin-bottom:18px;
+
+}
+
+.btn-row{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.btn-row button{
+
+    flex:1;
+
+}
+
+.choose{
+
+    background:linear-gradient(135deg,#d1001d,#780010);
+
+}
+
+/* Animation */
+
+.fadeIn{
+
+    animation:fade .6s;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+@keyframes logoAppear{
+
+    0%{
+
+        opacity:0;
+
+        transform:translateY(30px) scale(.8);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes glow{
+
+    0%{
+
+        filter:drop-shadow(0 0 5px red);
+
+    }
+
+    50%{
+
+        filter:drop-shadow(0 0 25px red);
+
+    }
+
+    100%{
+
+        filter:drop-shadow(0 0 5px red);
+
+    }
+
+}
